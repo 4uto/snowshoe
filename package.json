@@ -25,7 +25,9 @@
     "start": "babel-node --presets es2015 --presets react -- server/application.js",
     "worker": "babel-node --presets es2015 --presets react -- worker/index.js",
     "nodemon:application": "nodemon --exec npm run start",
-    "nodemon:worker": "nodemon --exec npm run worker"
+    "nodemon:worker": "nodemon --exec npm run worker",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "amqplib": "^0.4.1",
@@ -59,7 +61,8 @@
     "request": "^2.69.0",
     "socket.io": "^1.4.6",
     "socket.io-client": "^1.4.6",
-    "style-loader": "^0.13.0"
+    "style-loader": "^0.13.0",
+    "snyk": "^1.18.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
@@ -81,5 +84,6 @@
   },
   "engines": {
     "node": "v6.0.0"
-  }
+  },
+  "snyk": true
 }
